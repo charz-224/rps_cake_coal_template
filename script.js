@@ -34,13 +34,17 @@ cake.height = 200;
 
 if (computer_choice == choice)
 {
-    alert('draw!')
+    alert('Draw! You played: ' + choice + ', computer played: ' + choice)
     document.getElementById('rps').appendChild(coal)
 }
-else
+else if (computer_choice == 'rock' && choice == 'paper' || computer_choice == 'paper' && choice == 'scissors' || computer_choice == 'scissors' && choice == 'rock')
 {
-    alert('not draw!')
+    alert('Player wins! You played: ' + choice + ', computer played: ' + computer_choice)
     document.getElementById('rps').appendChild(cake)
+}
+else{
+    alert('Computer wins! You played: ' + choice + ', computer played: ' + computer_choice)
+    document.getElementById('rps').appendChild(coal)
 }
 
 
