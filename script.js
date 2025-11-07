@@ -1,3 +1,6 @@
+const metalpipe = new Audio('./assets/metal-pipe-clang.mp3')
+const correct = new Audio('./assets/correct.mp3')
+
 document.getElementById('ChangeName').addEventListener('click', (e) => {
     new_name = prompt('Enter your new username: ')
     document.getElementById('username').textContent = new_name
@@ -42,14 +45,17 @@ document.getElementById('PlayGame').addEventListener('click', (e) => {
     {
         alert('Draw! You played: ' + choice + ', computer played: ' + choice)
         document.getElementById('rps').appendChild(coal)
+        metalpipe.play()
     }
     else if (computer_choice == 'rock' && choice == 'paper' || computer_choice == 'paper' && choice == 'scissors' || computer_choice == 'scissors' && choice == 'rock')
     {
         alert('Player wins! You played: ' + choice + ', computer played: ' + computer_choice)
         document.getElementById('rps').appendChild(cake)
+        correct.play()
     }
     else{
         alert('Computer wins! You played: ' + choice + ', computer played: ' + computer_choice)
         document.getElementById('rps').appendChild(coal)
+        metalpipe.play()
     }
 })
